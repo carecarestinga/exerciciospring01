@@ -13,18 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AppSpringBootController {
 
+    //Acessa o diretorio raiz da aplicação
     @RequestMapping("/")//http://localhost:8080/
     @ResponseBody
     public String ola() {
         return "Ola, Mundo!!!!";
     }
 
+    //Acessa o diretorio ola/ juntando um nome qualquer
     @RequestMapping("/ola/{nome}")//http://localhost:8080/ola/carlos
     @ResponseBody
     public String ola(@PathVariable String nome) {
         return "Ola, " + nome + " !!";
     }
 
+     //Acessa o diretorio ola/ juntando um nome qualquer e uma hora qualquer
     @RequestMapping("/ola2/{nome}")//http://localhost:8080/ola/carlos
     @ResponseBody
     public String ola(@PathVariable String nome, @RequestParam("horas") int horas) {
